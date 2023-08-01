@@ -75,7 +75,7 @@ class CitasController extends Controller
      */
     public function destroy(string $id)
     {
-        $citaData = Citas::findOrFail(1);
+        $citaData = Citas::findOrFail($id);
 
         $citaData->delete();
 

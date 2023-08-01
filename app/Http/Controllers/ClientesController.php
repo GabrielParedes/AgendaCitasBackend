@@ -66,7 +66,7 @@ class ClientesController extends Controller
      */
     public function destroy(string $id)
     {
-        $clienteData = Clientes::findOrFail(1);
+        $clienteData = Clientes::findOrFail($id);
 
         $clienteData->delete();
 
