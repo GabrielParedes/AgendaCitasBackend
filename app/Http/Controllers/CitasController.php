@@ -33,8 +33,8 @@ class CitasController extends Controller
             'nombre' => $nombre,
             'apellido' => $apellido,
             'telefono' => $telefono,
-            'fechaCita' => $fechaCita,
-            'horaCita' => $horaCita,
+            'fecha_cita' => $fechaCita,
+            'hora_cita' => $horaCita,
             'servicio' => $servicio
         ]);
 
