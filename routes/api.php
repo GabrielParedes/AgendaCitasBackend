@@ -44,6 +44,9 @@ Route::get('buscar-cita/{id}', [CitasController::class, 'show']);
 Route::put('actualizar-cita/{id}', [CitasController::class, 'update']);
 Route::delete('eliminar-cita/{id}', [CitasController::class, 'destroy']);
 
+Route::get('buscar-citas', [CitasController::class, 'searchByParams']);
+
+
 
 Route::post('login', [AuthController::class, 'login']);
 

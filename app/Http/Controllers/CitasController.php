@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Citas;
+use DB;
 
 class CitasController extends Controller
 {
@@ -80,5 +81,31 @@ class CitasController extends Controller
         $citaData->delete();
 
         return $citaData;
+    }
+
+    public function searchByParams(Request $request)
+    {
+
+        $fechaCita = $request->fechaCita;
+        $servicio = $request->servicio;
+        $nombreCliente = $request->nombreCliente;
+
+        $citasData = DB::table('citas');
+
+        if ($fechaCita) {
+            $citasData->where('fecha_cita', $fechaCita);
+        }
+
+        if ($servicio) {
+            $citasData->where('servicio', $servicio);
+        }
+
+        if ($nombreCliente) {
+            $citasData->where('nombre', $nombreCliente);
+        }
+
+        $citasData = $citasData->get();
+
+        return $citasData;
     }
 }
