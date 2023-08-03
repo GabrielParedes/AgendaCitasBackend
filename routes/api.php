@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\ServiciosController;
 use App\Http\Controllers\CitasController;
 use App\Http\Controllers\AuthController;
 
@@ -37,6 +38,12 @@ Route::post('crear-cliente', [ClientesController::class, 'store']);
 Route::get('buscar-cliente/{id}', [ClientesController::class, 'show']);
 Route::put('actualizar-cliente/{id}', [ClientesController::class, 'update']);
 Route::delete('eliminar-cliente/{id}', [ClientesController::class, 'destroy']);
+
+Route::get('listar-servicios', [ServiciosController::class, 'index']);
+Route::post('crear-servicio', [ServiciosController::class, 'store']);
+Route::get('buscar-servicio/{id}', [ServiciosController::class, 'show']);
+Route::put('actualizar-servicio/{id}', [ServiciosController::class, 'update']);
+Route::delete('eliminar-servicio/{id}', [ServiciosController::class, 'destroy']);
 
 Route::get('listar-citas', [CitasController::class, 'index']);
 Route::post('crear-cita', [CitasController::class, 'store']);
