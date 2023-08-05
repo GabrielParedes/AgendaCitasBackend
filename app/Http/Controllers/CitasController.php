@@ -62,8 +62,8 @@ class CitasController extends Controller
         $citaData->nombre = $request->nombre;
         $citaData->apellido = $request->apellido;
         $citaData->telefono = $request->telefono;
-        $citaData->fechaCita = $request->fechaCita;
-        $citaData->horaCita = $request->horaCita;
+        $citaData->fecha_cita = $request->fechaCita;
+        $citaData->hora_cita = $request->horaCita;
         $citaData->servicio = $request->servicio;
 
         $citaData->save();
